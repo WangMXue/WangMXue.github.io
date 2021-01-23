@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>♡ʜᴇʟʟᴏ</title>
+    
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    a:active {
+        color: #0000FF
+    }
+
+    .top_box {
+        width: 100%;
+        height: 100vh;
+        background-color: rgb(186,194,183);
+        overflow: hidden;
+    }
+
+    .top_left {
+        float: left;
+        width: 65%;
+        height: 100vh;
+        background-color: white;
+    }
+
+    .top_right {
+        float: right;
+        width: 35%;
+        height: 100vh;
+        overflow: hidden;
+        animation: color 25s ease-in infinite;
+    }
+
+
+    .jpg {
+        width: 30vh;
+        height: 30vh;
+        float: left;
+        padding: 0;
+        margin: 0;
+    }
+
+    .top_text1 {
+        position: absolute;
+        top: 8vh;
+        left: 2vh;
+        font-size: 3vh;
+        padding-left: 0.5vh;
+        padding-right: 0.5vh;
+        color: white;
+        border-radius: 10%;
+        line-height: inherit;
+        font-family: KaiTi;
+        animation: color 25s ease-in infinite;
+    }
+
+    .top_text2 {
+        position: absolute;
+        top: 56vh;
+        left: 8vh;
+        font-size: 6vh;
+        font-family: Georgia;
+        transform-origin: left bottom;
+        transform: rotate(-90deg);
+        animation: tcolor 25s ease-in infinite;
+    }
+
+
+    .container {
+        z-index: 1;
+        width: 30vh;
+        height: 30vh;
+        position: absolute;
+        top: 33vh;
+        left: 15vh;
+        overflow: hidden;
+    }
+
+    .photo {
+        width: 180vh;
+        height: 30vh;
+        animation: switch 25s infinite;
+        animation-timing-function: ease-in-out;
+    }
+
+    @keyframes switchpc {
+        0%,6%,100% {
+            margin-left: 0;
+        }
+
+        10%,16%,90%,96% {
+            margin-left: -60vh;
+        }
+
+        20%,26%,80%,86% {
+            margin-left: -120vh;
+        }
+
+        30%,36%,70%,76% {
+            margin-left: -180vh;
+        }
+
+        40%,46%,60%,66% {
+            margin-left: -240vh;
+        }
+
+        50%,56% {
+            margin-left: -300vh;
+        }
+    }
+
+    @keyframes switch {
+        0%,6%,100% {
+            margin-left: 0;
+        }
+
+        10%,16%,90%,96% {
+            margin-left: -30vh;
+        }
+
+        20%,26%,80%,86% {
+            margin-left: -60vh;
+        }
+
+        30%,36%,70%,76% {
+            margin-left: -90vh;
+        }
+
+        40%,46%,60%,66% {
+            margin-left: -120vh;
+        }
+
+        50%,56% {
+            margin-left: -150vh;
+        }
+    }
+
+    @keyframes color {
+        0%,6%,100% {
+            background-color: #97B5CF;
+        }
+
+        10%,16%,90%,96% {
+            background-color: #7C8EA4;
+        }
+
+        20%,26%,80%,86% {
+            background-color: #9EA799;
+        }
+
+        30%,36%,70%,76% {
+            background-color: #FEFCE3;
+        }
+
+        40%,46%,60%,66% {
+            background-color: #8B91B3;
+        }
+
+        50%,56% {
+            background-color: #252F48;
+        }
+    }
+
+    @keyframes tcolor {
+        0%,6%,100% {
+            color: #97B5CF;
+        }
+
+        10%,16%,90%,96% {
+            color: #7C8EA4;
+        }
+
+        20%,26%,80%,86% {
+            color: #9EA799;
+        }
+
+        30%,36%,70%,76% {
+            color: #FEFCE3;
+        }
+
+        40%,46%,60%,66% {
+            color: #8B91B3;
+        }
+
+        50%,56% {
+            color: #252F48;
+        }
+    }
+
+
+    .navigation_bar {
+        width: 100%;
+        height: 5vh;
+        background-color: #1e272e;
+        position: fixed;
+        top: 0;
+        z-index: 100;
+        padding: 1vh;
+    }
+
+
+    @keyframes sun {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+
+        .jpg {
+            width: 60vh;
+            height: 60vh;
+            float: left;
+            padding: 0;
+            margin: 0;
+        }
+
+        .photo {
+            width: 360vh;
+            height: 60vh;
+            animation: switchpc 25s infinite;
+            animation-timing-function: ease-in-out;
+        }
+
+        .container {
+            z-index: 1;
+            width: 60vh;
+            height: 60vh;
+            position: absolute;
+            top: 20vh;
+            left: 100vh;
+            overflow: hidden;
+        }
+
+        .top_text1 {
+            position: absolute;
+            top: 8vh;
+            left: 2vh;
+            font-size: 3vh;
+            padding-left: 0.5vh;
+            padding-right: 0.5vh;
+            color: white;
+            border-radius: 10%;
+            line-height: inherit;
+            font-family: KaiTi;
+            animation: color 25s ease-in infinite;
+        }
+
+        .top_text2 {
+            position: absolute;
+            top: 65vh;
+            left: 15vh;
+            font-size: 10vh;
+            font-family: Georgia;
+            transform-origin: left bottom;
+            transform: rotate(-90deg);
+            animation: tcolor 25s ease-in infinite;
+        }
+    }
+
+
+
+</style>
+</head>
+
+<body>
+ 
+    <div class="navigation_bar">
+
+        <div style="font-size:3.5vh;position:absolute;top:1vh;right:3vh;transform-origin:center center; animation:sun 4s linear infinite;">🔆</div>
+    </div>
+
+
+    <div class="top_box">
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=0 height=0 src="https://music.163.com/outchain/player?type=2&id=26197585&auto=1&height=66"></iframe>
+        <div class="top_left">
+        </div>
+        <div class="top_right">
+        </div>
+
+        <div class="container">
+            <div class="photo">
+                <img class="jpg" src="http://m.qpic.cn/psc?/V53SvjeW1qqX0D0DTmrm3IIljy1e0nmE/TmEUgtj9EK6.7V8ajmQrEFbqWCCiIPAUOC6WH5017dIiZPAnTo9lseWZwbtjMRg30qvFWcl3ITYKtGMaiewCdMgfhNa9gMZy0upNCfTLjo8!/b&bo=QAZABvgQ.BABGT4!&rf=viewer_4" />
+                <img class="jpg" src="http://m.qpic.cn/psc?/V53SvjeW1qqX0D0DTmrm3IIljy1e0nmE/bqQfVz5yrrGYSXMvKr.cqScotSQpSMyl5xlnAdakLU440BKXObUYxOm*J.KbUbIjeWaTnmXrt.YO7i1XLspTSPicpIMhza9AIrDhkOG1csg!/b&bo=OAQ4BDgEOAQBCS4!&rf=viewer_4" />
+                <img class="jpg" src="http://m.qpic.cn/psc?/V53SvjeW1qqX0D0DTmrm3IIljy1e0nmE/TmEUgtj9EK6.7V8ajmQrEB0YIm3zv9.VwJVLK85Y64I*T9V7nNz6ABh3Cv3c3OiD3f9ZOvgeD9qYY7tC3diJa0ZNxW4HRq1aDu2RKX79qSM!/b&bo=oAWgBaAFoAUBKQ4!&rf=viewer_4" />
+                <img class="jpg" src="http://m.qpic.cn/psc?/V53SvjeW1qqX0D0DTmrm3IIljy1e0nmE/TmEUgtj9EK6.7V8ajmQrENICHfpuBlnp8Pgv**FSGUDiHhZHtQzaUoY*CAB7VN4jZ80hp5JY5aA6BJVBahOFLeIVZqsYzagDAe9u08BvXO8!/b&bo=.AL4AvgC.AIBGT4!&rf=viewer_4" />
+                <img class="jpg" src="http://m.qpic.cn/psc?/V53SvjeW1qqX0D0DTmrm3IIljy1e0nmE/TmEUgtj9EK6.7V8ajmQrEEhahesu1uaqnvnFBhNwJgpbcY9t4wx0cSUfI1a9v.2ZnXenugMHHGmFy1di9sEjv5XlIbyTmcU5XOPtGeF0oRI!/b&bo=gQQ4BIEEOAQBGT4!&rf=viewer_4" />
+                <img class="jpg" src="http://m.qpic.cn/psc?/V53SvjeW1qqX0D0DTmrm3IIljy1e0nmE/TmEUgtj9EK6.7V8ajmQrEMH5gnydaRmprgpfvS34WFURAkIft3C7roWqFO91g9COT*4EhRjY38BRETjfWQx4pIzM8XAU8XpeoHEmYxhWMtI!/b&bo=OAQ4BDgEOAQBGT4!&rf=viewer_4" />
+
+            </div>
+        </div>
+
+        <div class="top_text1">王梦雪</div>
+        <div class="top_text2">Love Letter </div>
+
+        <div style="position: absolute;top: 87vh;width: 100%;align-content: center;display: flex">
+            <text style="margin: 5vh auto; font-size: 2vh; color:#a4b0be; font-family: Georgia">Tu resteras une de mes chouchous.</text>
+        </div>
+
+
+    </div>
+
+
+    <!--***************************************
+        源码来自库Zanrc.github.io
+        Gitgub用户2644480763@qq.com
+        未经授权禁止使用
+    ********************************************************* -->
+
+    <script>
+        new Vue({
+            el: '#navigation_but',
+            data: {
+                isActive: false
+            },
+            methods: {
+                turn: function (event) {
+                    this.isActive = !this.isActive;
+                    console.log(123);
+                }
+
+            }
+        })
+
+
+        var a_idx = 0;
+        jQuery(document).ready(function ($) {
+            $("body").click(function (e) {
+                var a = new Array("⭐", "🌙", "♥", "⚡", "🦄", "🔆", "🎵", "💋", "🐷", "🎈", "🦋", "💭");
+                var $i = $("<span></span>").text(a[a_idx]);
+                a_idx = (a_idx + 1) % a.length;
+                var x = e.pageX,
+                    y = e.pageY;
+                $i.css({
+                    "z-index": 9999,
+                    "top": y - 20,
+                    "left": x,
+                    "position": "absolute",
+                    "font-weight": "bold",
+                    "color": "rgb(" + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + ")"
+                });
+                $("body").append($i);
+                $i.animate({
+                    "top": y - 180,
+                    "opacity": 0
+                },
+                    1500,
+                    function () {
+                        $i.remove();
+                    });
+            });
+        });
+
+
+
+    </script>
+
+
+</body>
+</html>
+
+
+
